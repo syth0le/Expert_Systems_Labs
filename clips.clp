@@ -1,41 +1,36 @@
-;;TECNOLOGICO DE COSTA RICA
-;;Inteligencia Artificial
-;;Carlos Fernández Jiménez
+;;Run commands in terminal
+;;  ~: clips (if u havent got alias in the system run absolute path: /dirs/abs_path/your_dir/clips)
+;; CLIPS> ( chdir "/dirs/abs_path/your_dir/Expert_Systems_Labs" ) - its only for setting work directory with project file
+;; CLIPS> (load ./clips.clp)
+;; CLIPS> (reset)
+;; CLIPS> (run)
+;; Then u will see programm inputs
 
-;;Comandos para ejecutar el programa
-;;(load ./main.clp)
-;;(reset)
-;;(run)
-
-;;programa para consultar el parentesco entre personas
-
-;;===============hechos iniciales===========================================
-;;relaciones entre personas que se asumen como una verdad absoluta
-;;ejem: el padre de donna es john, donna es de sexo femenino
+;; initialiaze relations and facts
 (deffacts initialFacts
-        "Hechos iniciales del programa"
-        (parent john donna)
-        (parent john george)
-        (parent john mary)
-        (parent juana mary)
-        (parent mary james)
-        (parent mary evelyn)
-        (parent george juan)
-        (female donna)
-        (male george)
-        (female juana)
-        (female mary)
-        (female evelyn)
-        (male james)
-        (male juan)
-        (male john)
+        "initialize relations in program"
+        (parent dima katya)
+        (parent dima kirill)
+        (parent dima maria)
+        (parent ira maria)
+        (parent maria egor)
+        (parent maria anya)
+        (parent kirill vitya)
+        (female katya)
+        (male kirill)
+        (female ira)
+        (female maria)
+        (female anya)
+        (male egor)
+        (male vitya)
+        (male dima)
 )
 
 ;;===============objects needed=============================================
 ;;(deftemplate RelationShip(slot grandFather))
 
 
-;;===============reglas de inputs===========================================
+;;===============inputs===========================================
 (defrule getNames
    (declare (salience 100))
    =>
@@ -50,7 +45,7 @@
    ;;(assert (nieto ?name2))
 )
 
-;;===============reglas=====================================================
+;;===============relatonship rules=====================================================
 
 (defrule brotherRelation
     (male ?x)
@@ -141,7 +136,7 @@
 
 
 
-;;===============reglas para evaluar estados finales===============================================
+;;===============extra rules===============================================
 (defrule isGrandFather
     ;;?b <- (abuelo ?x)
     ;;(bind ?r2 ((facts  ?resp2)))

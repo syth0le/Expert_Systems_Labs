@@ -1,4 +1,5 @@
 /* Prolog program to "guess memes" among the most famous memes in Russia */
+/* Run command swipl prolog.pl */ 
 /* Start with ?- go. */
 /* Build with ?- [memeID]. */
 
