@@ -81,12 +81,11 @@ kak_tebe_takoe_elon_musk :- smeshnoy,
 
 
 /* classification rules */
-smeshnoy :- verify(funny).
+smeshnoy :- verify(smeshnoy).
 
 sad :- verify(sad).
 
-krinzh :- smeshnoy,
-     verify(krinzh).
+krinzh :- verify(krinzh).
 
 /* how to ask questions */
 ask(Question) :-
