@@ -26,9 +26,6 @@
         (male dima)
 )
 
-;;===============objects needed=============================================
-;;(deftemplate RelationShip(slot grandFather))
-
 
 ;;===============inputs===========================================
 (defrule getNames
@@ -40,9 +37,7 @@
    (bind ?name2 (read))
    (printout t "--------Results--------" crlf)
 
-  ;;(assert (RelationShip (grandFather ?name1 ?name2))))
    (assert (abuelo ?name1))
-   ;;(assert (nieto ?name2))
 )
 
 ;;===============relatonship rules=====================================================
@@ -138,9 +133,6 @@
 
 ;;===============extra rules===============================================
 (defrule isGrandFather
-    ;;?b <- (abuelo ?x)
-    ;;(bind ?r2 ((facts  ?resp2)))
-    ;;(grandFather ?a ?b)
     (grandFather ?a ?b)
    =>
     (printout t ?a " is GrandFather of: " ?b crlf)
